@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RKALearning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">RKALearning</a>
+            <nav>
+                <a href="#">Beranda</a>
+                <a href="#jenjang">Jenjang Sekolah</a>
+                <a href="#promo">Promo Spesial</a>
+                <a href="#contact">Hubungi Kami</a>
+            </nav>
+            <a href="#" class="tombol-daftar" style="padding: 10px 20px; font-size: 0.9rem;">Daftar</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Belajar Lebih Seru & Berprestasi</h1>
+            <p>Bergabunglah dengan ribuan siswa lainnya dan raih nilai impianmu bersama tutor ahli kami.</p>
+            <img src="https://picsum.photos/seed/learning/800/400" alt="Foto Belajar">
+            <br><br>
+            <a href="#" class="tombol-daftar">Mulai Belajar Sekarang</a>
+        </section>
+
+        <h2 id="jenjang" class="section-title">Program Unggulan Kami</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>Tingkat SD</h3>
+                <p>Pendampingan belajar intensif untuk semua mata pelajaran kelas 1-6 SD dengan metode visual yang
+                    menarik.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Tingkat SMP</h3>
+                <p>Fokus penguasaan konsep dasar Matematika, IPA, dan Bahasa Inggris untuk persiapan ujian sekolah.</p>
+            </div>
+            <div class="grid-item">
+                <h3>Tingkat SMA</h3>
+                <p>Strategi cepat pengerjaan soal dan pemantapan materi untuk persiapan masuk PTN impian.</p>
+            </div>
+        </div>
+
+        <div class="paket-header">
+            <h2>⭐ Paket populer untuk</h2>
+            <select id="level-select" class="dropdown-kelas">
+                <option value="SMA">SMA</option>
+                <option value="SMP">SMP</option>
+                <option value="SD">SD</option>
+            </select>
+        </div>
+
+        <div id="paket-grid" class="paket-grid">
+            <!-- Konten akan diisi via JavaScript -->
+        </div>
+
+        <div id="promo" class="promo-box">
+            <h2>Promo Ramadhan Berkah</h2>
+            <p>Dapatkan potongan harga spesial pendaftaran hingga 50% khusus pendaftar minggu ini!</p>
+            <div class="promo-code">KODE: BERKAHLEARN</div>
+            <br><br>
+            <a href="#" class="tombol-daftar" style="background: white; color: var(--primary); box-shadow: none;">Klaim
+                Promo</a>
+        </div>
+
+        <section id="contact" class="contact-section">
+            <div class="contact-info">
+                <h2>Hubungi Kami</h2>
+                <p>Punya pertanyaan atau butuh bantuan? Tim kami siap membantu Anda kapan saja.</p>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-text">
+                        <h4>Alamat Kantor</h4>
+                        <p>Jl. Suki No. 69, Ngawi Selatan</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-text">
+                        <h4>Nomor Telepon</h4>
+                        <p>+62 812-3456-7890</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <p>info@rkalearning.com</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">⏰</div>
+                    <div class="info-text">
+                        <h4>Jam Operasional</h4>
+                        <p>Senin - Jumat: 08:00 - 17:00</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" placeholder="Masukkan nama Anda">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Masukkan email Anda">
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" rows="4" placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                </div>
+                <button class="btn-send" id="btn-send-message">Kirim Pesan</button>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Hak Cipta &copy; 2026 RKALearning</p>
+    </footer>
+
+    <script>
+        // Data Paket untuk setiap Jenjang
+        const dataPaket = {
+            'SD': [
+                {
+                    bg: 'bg-blue',
+                    badge: 'badge-blue',
+                    badgeText: 'Materi Visual',
+                    category: 'ruangbelajar SD',
+                    title: 'Video belajar animasi untuk semua mata pelajaran SD',
+                    img: 'https://picsum.photos/seed/sd1/200/200',
+                    price: 'Rp 30.000',
+                    benefits: ['Materi tematik lengkap kelas 1-6', 'Latihan soal dengan pembahasan visual']
+                },
+                {
+                    bg: 'bg-green',
+                    badge: 'badge-purple',
+                    badgeText: 'Tatap Muka',
+                    category: 'Brain Academy Center SD',
+                    title: 'Bimbingan belajar di lokasi terdekat + bantuan PR',
+                    img: 'https://picsum.photos/seed/sd2/200/200',
+                    price: 'Rp 150.000',
+                    benefits: ['Kelas interaktif dengan tutor berpengalaman', 'Fasilitas modern dan nyaman']
+                },
+                {
+                    bg: 'bg-orange',
+                    badge: 'badge-purple',
+                    badgeText: 'Live Teaching',
+                    category: 'Brain Academy Online SD',
+                    title: 'Sesi live interaktif bareng Star Teacher',
+                    img: 'https://picsum.photos/seed/sd3/200/200',
+                    price: 'Rp 80.000',
+                    benefits: ['Konsultasi PR online via chat', 'Modul belajar dikirim ke rumah']
+                }
+            ],
+            'SMP': [
+                {
+                    bg: 'bg-blue',
+                    badge: 'badge-blue',
+                    badgeText: 'Persiapan Ujian',
+                    category: 'ruangbelajar SMP',
+                    title: 'Penguasaan konsep dasar dan bank soal ujian sekolah',
+                    img: 'https://picsum.photos/seed/smp1/200/200',
+                    price: 'Rp 45.000',
+                    benefits: ['Rangkuman materi konsep kilat', 'Ribuan bank soal terupdate']
+                },
+                {
+                    bg: 'bg-green',
+                    badge: 'badge-purple',
+                    badgeText: 'Fasilitas Lengkap',
+                    category: 'Brain Academy Center SMP',
+                    title: 'Kelas intensif tatap muka persiapan PTS & PAS',
+                    img: 'https://picsum.photos/seed/smp2/200/200',
+                    price: 'Rp 220.000',
+                    benefits: ['Tryout rutin berkala', 'Konseling pendidikan & minat bakat']
+                },
+                {
+                    bg: 'bg-orange',
+                    badge: 'badge-purple',
+                    badgeText: 'Live Teaching',
+                    category: 'Brain Academy Online SMP',
+                    title: 'Live Teaching interaktif & grup belajar eksklusif',
+                    img: 'https://picsum.photos/seed/smp3/200/200',
+                    price: 'Rp 100.000',
+                    benefits: ['Sesi tanya jawab langsung', 'Akses video belajar premium']
+                }
+            ],
+            'SMA': [
+                {
+                    bg: 'bg-blue',
+                    badge: 'badge-blue',
+                    badgeText: 'SNBT 2025',
+                    category: 'ruangbelajar SMA + UTBK',
+                    title: 'Strategi lolos PTN dan materi sekolah lengkap',
+                    img: 'https://picsum.photos/seed/sma1/200/200',
+                    price: 'Rp 55.000',
+                    benefits: ['Analisis peluang masuk kampus impian', 'Tryout UTBK dengan sistem IRT']
+                },
+                {
+                    bg: 'bg-green',
+                    badge: 'badge-purple',
+                    badgeText: 'Persiapan PTN',
+                    category: 'Brain Academy Center SMA',
+                    title: 'Bimbingan intensif tatap muka masuk PTN favorit',
+                    img: 'https://picsum.photos/seed/sma2/200/200',
+                    price: 'Rp 300.000',
+                    benefits: ['Konseling jurusan & universitas', 'Kelas tambahan khusus soal sulit']
+                },
+                {
+                    bg: 'bg-orange',
+                    badge: 'badge-purple',
+                    badgeText: 'Live Teaching',
+                    category: 'Brain Academy Online SMA',
+                    title: 'Live Teaching intensif persiapan ujian & seleksi masuk',
+                    img: 'https://picsum.photos/seed/sma3/200/200',
+                    price: 'Rp 120.000',
+                    benefits: ['Tanya jawab soal sulit secara live', 'Grup diskusi bareng tutor ahli']
+                }
+            ]
+        };
+
+        function updatePaket(level) {
+            const grid = document.getElementById('paket-grid');
+            const paket = dataPaket[level];
+
+            grid.innerHTML = paket.map(p => `
+                <div class="paket-card">
+                    <div class="card-top ${p.bg}">
+                        <div class="badge ${p.badge}">${p.badgeText}</div>
+                        <div>
+                            <div class="card-category">${p.category}</div>
+                            <div class="card-title">${p.title}</div>
+                        </div>
+                        <img src="${p.img}" class="card-student-img" alt="Student">
+                    </div>
+                    <div class="card-body">
+                        <div class="price-info">
+                            <div class="price-period">Paket Tahun Ajaran 2025/2026</div>
+                            <div class="current-price">${p.price}<span class="price-period">/bulan</span></div>
+                        </div>
+                        <a href="#" class="btn-beli tombol-daftar">Beli Paket</a>
+                        <ul class="benefit-list">
+                            ${p.benefits.map(b => `
+                                <li class="benefit-item">
+                                    <span class="benefit-icon">⭐</span>
+                                    <span>${b}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                        <a href="#" class="link-detail">Lihat Detail ></a>
+                    </div>
+                </div>
+            `).join('');
+
+            // Re-attach event listeners for the new "Beli Paket" buttons
+            attachDaftarListeners();
+        }
+
+        function attachDaftarListeners() {
+            const tombolDaftar = document.querySelectorAll('.tombol-daftar');
+            tombolDaftar.forEach(btn => {
+                // Remove old listener if any (though map replaces innerHTML so it's fresh)
+                btn.onclick = function (e) {
+                    e.preventDefault();
+                    showModal('Pendaftaran Anda sedang diproses oleh tim kami.');
+                };
+            });
+
+            const btnSendMessage = document.getElementById('btn-send-message');
+            if (btnSendMessage) {
+                btnSendMessage.onclick = function (e) {
+                    e.preventDefault();
+                    showModal('Pesan Anda telah terkirim! Tim kami akan segera menghubungi Anda.');
+                };
+            }
+        }
+
+        function showModal(message = 'Pendaftaran Anda sedang diproses oleh tim kami.') {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '50%';
+            modal.style.left = '50%';
+            modal.style.transform = 'translate(-50%, -50%)';
+            modal.style.background = 'white';
+            modal.style.padding = '30px';
+            modal.style.borderRadius = '20px';
+            modal.style.boxShadow = '0 20px 50px rgba(0,0,0,0.2)';
+            modal.style.zIndex = '1000';
+            modal.style.textAlign = 'center';
+            modal.style.width = '90%';
+            modal.style.maxWidth = '400px';
+            modal.innerHTML = `
+                <h2 style="color: #006493; margin-bottom: 15px;">Terima Kasih!</h2>
+                <p style="color: #64748b; margin-bottom: 20px;">${message}</p>
+                <button id="closeModal" style="background: #fe761b; color: white; border: none; padding: 10px 25px; border-radius: 10px; cursor: pointer; font-weight: 600;">Tutup</button>
+            `;
+
+            const overlay = document.createElement('div');
+            overlay.style.position = 'fixed';
+            overlay.style.top = '0';
+            overlay.style.left = '0';
+            overlay.style.width = '100%';
+            overlay.style.height = '100%';
+            overlay.style.background = 'rgba(0,0,0,0.5)';
+            overlay.style.zIndex = '999';
+
+            document.body.appendChild(overlay);
+            document.body.appendChild(modal);
+
+            document.getElementById('closeModal').addEventListener('click', () => {
+                document.body.removeChild(modal);
+                document.body.removeChild(overlay);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const levelSelect = document.getElementById('level-select');
+
+            levelSelect.addEventListener('change', function () {
+                updatePaket(this.value);
+            });
+
+            // Initial load
+            updatePaket('SMA');
+
+            // Initial listeners for other buttons (hero, promo)
+            attachDaftarListeners();
+        });
+    </script>
+</body>
+
+</html>
